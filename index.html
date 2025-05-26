@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <title>Price Catalog</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <style>html,body{margin:0;background:#fff;}</style>
+</head>
+<body>
+<script>
+/**
+ * 這段程式會：
+ * 1. 初始化 LIFF
+ * 2. 把兩張價目表圖送進目前聊天室
+ * 3. 關閉視窗
+ */
+liff.init({ liffId: '2007479078-8n5Anwpe' })
+  .then(() => {
+    return liff.sendMessages([
+      {
+        type: 'image',
+        originalContentUrl: 'https://ufo43224.github.io/yiqi/1_0.jpg',
+        previewImageUrl:   'https://ufo43224.github.io/yiqi/1_0.jpg'
+      },
+      {
+        type: 'image',
+        originalContentUrl: 'https://ufo43224.github.io/yiqi/2_0.jpg',
+        previewImageUrl:   'https://ufo43224.github.io/yiqi/2_0.jpg'
+      }
+    ]);
+  })
+  .then(() => liff.closeWindow())
+  .catch(console.error);
+</script>
+</body>
+</html>
