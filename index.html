@@ -9,26 +9,33 @@
 <body>
 <script>
 /**
- * 這段程式會：
  * 1. 初始化 LIFF
- * 2. 把兩張價目表圖送進目前聊天室
- * 3. 關閉視窗
+ * 2. 一次送出 4 張價目表圖片
+ * 3. 自動關閉 LIFF 視窗
  */
 liff.init({ liffId: '2007479078-8n5Anwpe' })
-  .then(() => {
-    return liff.sendMessages([
-      {
-        type: 'image',
-        originalContentUrl: 'https://ufo43224.github.io/yiqi/1_0.jpg',
-        previewImageUrl:   'https://ufo43224.github.io/yiqi/1_0.jpg'
-      },
-      {
-        type: 'image',
-        originalContentUrl: 'https://ufo43224.github.io/yiqi/2_0.jpg',
-        previewImageUrl:   'https://ufo43224.github.io/yiqi/2_0.jpg'
-      }
-    ]);
-  })
+  .then(() => liff.sendMessages([
+    {
+      type: 'image',
+      originalContentUrl: 'https://ufo43224.github.io/yiqi/price-01.jpg',
+      previewImageUrl:    'https://ufo43224.github.io/yiqi/price-01.jpg'
+    },
+    {
+      type: 'image',
+      originalContentUrl: 'https://ufo43224.github.io/yiqi/price-02.jpg',
+      previewImageUrl:    'https://ufo43224.github.io/yiqi/price-02.jpg'
+    },
+    {
+      type: 'image',
+      originalContentUrl: 'https://ufo43224.github.io/yiqi/price-03.jpg',
+      previewImageUrl:    'https://ufo43224.github.io/yiqi/price-03.jpg'
+    },
+    {
+      type: 'image',
+      originalContentUrl: 'https://ufo43224.github.io/yiqi/price-04.jpg',
+      previewImageUrl:    'https://ufo43224.github.io/yiqi/price-04.jpg'
+    }
+  ]))
   .then(() => liff.closeWindow())
   .catch(console.error);
 </script>
